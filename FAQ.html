@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lululemon - FAQ</title>
+    <script src="https://kit.fontawesome.com/5a8e77b133.js" crossorigin="anonymous"></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffbcd9;
+    color: #ffc9fc;
+    padding: 0.5rem 0;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-image {
+    width: 80px; 
+    height: auto;
+    margin-top: -10px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+.nav-links a:hover {
+    background: #ffc9fc;
+    border-radius: 4px;
+}
+.nav-links a.active {
+    background: #ffc9fc;
+    border-radius: 4px;
+    color: #e60023;
+}
+
+h1{
+    font-size: 35px;
+}
+
+h1, p{
+    margin-left: 15px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    gap: 1rem; 
+    padding: 1rem 0; 
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0; 
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-section p,
+.footer-section a {
+    margin: 0.5rem 0;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f1beef;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: #fff;
+    font-size: 1.35rem;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 90%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    margin-left: 10px;
+}
+.active, .accordion:hover {
+    background-color: #ccc; 
+}
+.panel {
+    padding: 0 5px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+.accordion:after {
+    content: '\02795'; /* Plus sign */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+}
+.active:after {
+    content: '\2796'; /* Minus sign */
+}
+  
+  .aaa {
+    color: #000;
+    text-decoration: underline;
+    text-decoration-color: #f1beef;
+    text-decoration-thickness: 2px; 
+  }
+  
+  .aaa:hover {
+    color: #f1beef;
+    text-decoration: none;
+  }
+
+  .aa {
+    color: #000;
+    text-decoration: underline;
+    text-decoration-color: #f1beef;
+    text-decoration-thickness: 2px; 
+  }
+  
+  .aa:hover {
+    color: #f1beef;
+    background-color: #ffffff;
+    text-decoration: none;
+  }
+
+
+  .h3{
+    font-size: 30px;
+    margin-left: 20px;
+  }
+
+  p{
+    margin-left: 20px;
+  }
+
+  h2{
+    font-size: 30px;
+    margin-left: 10px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px; 
+    height: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo"><img src="Logo.png" alt="Logo Image" class="logo-image">Lululemon</a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <h1>Frequently Asked Question(FAQs)</h1>
+    <p>"Curious about Lululemon? Well, you're in the right place."</p>
+
+    <h2>Product Information</h2>
+            <button class="accordion">What materials are used in Lululemon products?</button>
+            <div class="panel">
+              <p>Lululemon uses high-performance fabrics like Luon, Nulu, and Everlux, designed for comfort and moisture-wicking.</p>
+            </div>
+            
+            <button class="accordion">How do I choose the right size?</button>
+            <div class="panel">
+              <p>Refer to our <a class="aaa"href="https://shop.lululemon.com/help/size-guide/womens">size guide</a> on the website, which includes measurements for each product category.</p>
+            </div>
+            
+            <button class="accordion">How should I care for my Lululemon gear?</button>
+            <div class="panel">
+              <p>Wash in cold water, avoid fabric softeners, and tumble dry on low to maintain fabric integrity.</p>
+            </div>
+
+            <button class="accordion">Are there specific products for different activities?</button>
+            <div class="panel">
+               <p>Yes, we offer <a class="aaa"href="https://shop.lululemon.com/c/women/yoga/_/N-7vfZ1z141d0">specialized gear</a> for yoga, running, training, and everyday wear to suit various activities.</p>
+            </div>
+
+            <button class="accordion">What makes Lululemon's products unique?</button>
+            <div class="panel">
+               <p>Our products combine technical performance, stylish designs, and a focus on  <a class="aaa"href="https://www.lululemon.co.uk/en-gb/c/community/hubs">community</a> and wellness.</p>
+            </div><br/><br/>
+        <h2>Shipping and Returns</h2>
+            <button class="accordion">What shipping options are available?</button>
+            <div class="panel">
+              <p>We offer standard, expedited, and express shipping options at checkout.</p>
+            </div>
+            
+            <button class="accordion">How long will my order take to arrive?</button>
+            <div class="panel">
+              <p>Standard shipping typically takes 3-5 business days, while expedited and express options arrive sooner.</p>
+            </div>
+            
+            <button class="accordion">What is Lululemon's <a class="aa"href="https://shop.lululemon.com/help/return/policy">return policy</a>?</button>
+            <div class="panel">
+              <p>We accept returns within 30 days of purchase, provided items are unworn and in original condition.</p>
+            </div>
+
+            <button class="accordion">How do I initiate a return or exchange?</button>
+            <div class="panel">
+               <p>To start a return, visit our <a class="aaa"href="https://shop.lululemon.com/help/returns">returns page</a> and follow the instructions for your order.</p>
+            </div>
+
+            <button class="accordion">Are there any shipping costs?</button>
+            <div class="panel">
+               <p>Shipping costs vary based on the chosen method; free shipping is available on orders over a certain amount.</p>
+            </div><br/><br/>
+
+        <h2>Membership and Community</h2>
+            <button class="accordion">What are the benefits of becoming a Lululemon member?</button>
+            <div class="panel">
+              <p>Members enjoy exclusive discounts, early access to new products, and invitations to special events.</p>
+            </div>
+            
+            <button class="accordion">How do I sign up for a membership?</button>
+            <div class="panel">
+              <p>You can sign up <a class="aaa" href="https://shop.lululemon.com/membership">online</a> or in-store by providing your email and creating an account.</p>
+            </div>
+            
+            <button class="accordion">Are there local community events I can participate in?</button>
+            <div class="panel">
+              <p>Yes, we host various events like yoga classes, running clubs, and wellness workshops—check our <a class="aaa" href="https://corporate.lululemon.com/investors/news-and-events/events-and-presentations">events page</a> for details.</p>
+            </div><br/><br/>
+
+        <h2>Store Locations</h2>
+            <button class="accordion">Where can I find Lululemon store locations?</button>
+            <div class="panel">
+              <p>You can find store locations by visiting <a class="aaa" href="https://shop.lululemon.com/stores/all-lululemon-stores">our website</a> and using the store locator feature.</p>
+            </div>
+            
+            <button class="accordion">Are store hours the same for all locations?</button>
+            <div class="panel">
+              <p>Store hours vary by location; please check individual store listings for specific hours.</p>
+            </div>
+            
+            <button class="accordion">Do you have international stores?</button>
+            <div class="panel">
+              <p>Yes, Lululemon has stores in several countries around the world. Check our <a class="aaa" href="https://shop.lululemon.com/stores">store locator</a> for details.</p>
+            </div>
+
+            <button class="accordion">How can I find out if a specific item is available in-store?</button>
+            <div class="panel">
+              <p>You can check item availability on our website or contact your local store directly.</p>
+            </div>
+
+            <button class="accordion">Are there any upcoming store openings or events?</button>
+            <div class="panel">
+              <p>Yes, we regularly host events and open new stores. Check our <a class="aaa" href="https://corporate.lululemon.com/investors/news-and-events/events-and-presentations">events page</a> for the latest updates.</p>
+            </div><br/><br/>
+
+        <h2>Customer Support</h2>
+           <button class="accordion">How can I contact customer support?</button>
+           <div class="panel">
+            <p>You can contact customer support via <a class="aaa" href="https://shop.lululemon.com/contact">our website</a>, email, or phone during business hours.</p>
+           </div>
+
+           <button class="accordion">Is there a live chat option available?</button>
+           <div class="panel">
+            <p>Yes, we offer a <a class="aaa" href="https://shop.lululemon.com/live-chat">live chat</a> feature on our website for immediate assistance.</p>
+           </div>
+
+           <button class="accordion">What should I do if I have an issue with my order?</button>
+           <div class="panel">
+            <p>Please reach out to <a class="aaa" href="https://www.lululemon-virtualshopping.com/?icid=cdp-contact;3;featurepromocard;https://www.lululemon-virtualshopping.com;">customer support</a> as soon as possible with your order details for prompt assistance.</p>
+           </div>
+
+           <button class="accordion">What if I need help with a product?</button>
+           <div class="panel">
+            <p>If you need assistance with a product, please check our <a class="aaa" href="https://shop.lululemon.com/help">Help Center</a> or contact <a class="aaa" href="https://www.lululemon-virtualshopping.com/?icid=cdp-contact;3;featurepromocard;https://www.lululemon-virtualshopping.com;">customer support</a> for personalized guidance.</p>
+            </div>
+
+            <button class="accordion">How can I provide feedback about my experience?</button>
+            <div class="panel">
+                <p>We welcome feedback! You can submit your comments through our website's feedback form or directly to customer support.</p>
+            </div><br/><br/>
+
+        <h3 class="h3"><strong></strong>Got more questions?</strong></h3>
+        <p>Feel free to share them in this <a class="aaa" href="https://forms.gle/uVSDLUE7C4zmicBa7">form</a> and we’ll be happy to provide answers!</p>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>CUSTOMER CARE</h3>
+                <p><strong>Phone Number:</strong> <br/> 
+                    1-877-263-9300</p>
+                <p><strong>Email Address:</strong> customercare@lululemon.me</p>
+            </div>
+            <div class="footer-section">
+              <h3>POLICIES</h3>
+              <p><a href="https://shop.lululemon.com/help/legal/terms-of-use">Terms & Conditions</a></p>
+              <p><a href="https://shop.lululemon.com/help/return/policy">Return Policy</a></p>
+          </div>
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/lululemon" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/lululemon/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/lululemon/" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@lululemon" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.pinterest.com/lululemon/" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Lululemon. Eng Zhi Cheng. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
+<script>
+   var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+});
+}
+    </script>

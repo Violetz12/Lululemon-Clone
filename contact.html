@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lululemon - Contact</title>
+    <script src="https://kit.fontawesome.com/5a8e77b133.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"); 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffbcd9;
+    padding: 0.5rem 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-image {
+    width: 80px; 
+    height: auto;
+    margin-top: -10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem; 
+    align-items: center;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem; 
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: #ebdbea;
+    border-radius: 4px;
+    color: #e60023;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; 
+        align-items: center;
+    }
+}
+.top-half {
+    height: 50vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.top-image {
+    margin-top: 1px;
+    margin-bottom: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%; 
+    height: auto; 
+    max-height: 100%; 
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1; 
+}
+
+
+.bottom-half {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.map-container,
+.contact-info,
+.contact-form-container {
+    flex: 1;
+    min-width: 300px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#map {
+    height: 300px; 
+    width: 100%;
+    border-radius: 8px;
+}
+
+.contact-input {
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    transition: border 0.3s;
+}
+
+.contact-input:focus {
+    border: 2px solid #ff9cfc;
+}
+
+textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #f1beef, #f1beef);
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-button:hover {
+    background: #ff9cfc;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    gap: 1rem; 
+    padding: 1rem 0; 
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0; 
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-section p,
+.footer-section a {
+    margin: 0.5rem 0;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f1beef;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: #fff;
+    font-size: 1.35rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+::-webkit-scrollbar {
+    width: 12px; 
+    height: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="Logo.png" alt="Logo Image" class="logo-image">Lululemon
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="top-half">
+            <img src="COntacts.png" alt="Lululemon Contact Helpline" class="top-image">
+        </section>
+
+        <section class="bottom-half">
+            <div class="container">
+                <div class="map-container">
+                    <h2>Our Stores</h2>
+                    <div id="map"></div>
+                </div>
+
+                <div class="contact-info">
+                    <h2>Customer Service</h2>
+                    <p>
+                        <strong>Phone:</strong> 1-877-263-9300<br>
+                        <strong>Email:</strong> <a href="mailto:customercare@lululemon.me">customercare@lululemon.me</a><br>
+                        <strong>Response Time:</strong> 1-2 business days<br>
+                        <strong>Mailing Address:</strong> 1818 Cornwall Avenue, Vancouver
+                    </p>
+                </div>
+
+                <div class="contact-form-container">
+                    <h2>Get in Touch</h2>
+                    <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                        <input type="hidden" name="access_key" value="63988402-e4e7-4849-8bc5-d211937b5417">
+                        <input type="text" name="name" placeholder="Your Name" class="contact-input" required>
+                        <input type="email" name="email" placeholder="Your Email" class="contact-input" required>
+                        <textarea name="message" placeholder="Your Message" class="contact-input" required></textarea>
+                        <button type="submit" class="submit-button">Submit<i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>CUSTOMER CARE</h3>
+                <p><strong>Phone Number:</strong> 1-877-263-9300</p>
+                <p><strong>Email Address:</strong> <a href="mailto:customercare@lululemon.me">customercare@lululemon.me</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>POLICIES</h3>
+                <p><a href="https://shop.lululemon.com/help/legal/terms-of-use">Terms & Conditions</a></p>
+                <p><a href="https://shop.lululemon.com/help/return/policy">Return Policy</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/lululemon" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/lululemon/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/lululemon/" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@lululemon" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.pinterest.com/lululemon/" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Lululemon. Eng Zhi Cheng. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        var map = L.map('map').setView([4.2105, 101.9758], 7);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        var stores = [
+            { "lat": 3.140600, "lng": 101.716720, "name": "lululemon TRX" },
+            { "lat": 3.1366, "lng": 101.7372, "name": "lululemon Pavilion" },
+            { "lat": 3.1186921, "lng": 101.6942371, "name": "lululemon KL" },
+            { "lat": 3.1516964, "lng": 101.6760749, "name": "lululemon Gardens Mall" },
+        ];
+
+        stores.forEach(function(store) {
+            L.marker([store.lat, store.lng])
+                .addTo(map)
+                .bindPopup(store.name);
+        });
+    </script>
+</body>
+</html>

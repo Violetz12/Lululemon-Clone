@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5a8e77b133.js" crossorigin="anonymous"></script>
+    <title>Lululemon - Shop</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffbcd9;
+    padding: 0.5rem 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-image {
+    width: 80px; 
+    height: auto;
+    margin-top: -10px;  
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;  
+    align-items: center;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem; 
+    display: flex;
+    align-items: center;
+    font-weight: 500;  
+    transition: all 0.3s ease; 
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: #ebdbea; 
+    border-radius: 4px; 
+    color: #e60023;  
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    padding: 20px;
+    flex-wrap: wrap; 
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #e60023;
+    color: #fff;
+}
+
+.sub-menu {
+    list-style-type: disc; 
+    padding-left: 20px; 
+    display: none;
+}
+
+.sidebar ul li:hover .sub-menu {
+    display: block;
+}
+
+.main-content {
+    width: 80%;
+    padding: 20px;
+}
+
+.header-search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    justify-content: flex-start; 
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 400px; 
+}
+
+.search-button {
+    background-color: #e60023;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+.header-search i.fa-cart-shopping {
+    margin-left: 15px; 
+    font-size: 1.5rem;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column; 
+    }
+
+    .sidebar {
+        width: 100%; 
+        box-shadow: none; 
+        margin-bottom: 20px; 
+    }
+
+    .main-content {
+        width: 100%; 
+    }
+
+    .header-search {
+        gap: 10px; 
+    }
+
+    .search-input {
+        width: 300px;
+    }
+}
+
+@media (min-width: 768px) {
+    .search-input {
+        width: 400px; 
+    }
+}
+
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: box-shadow 0.3s, transform 0.2s;
+    background-color: #fff;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-height: 200px; 
+}
+
+.product-card h3 {
+    margin: 10px 0 5px;
+}
+
+.product-card p {
+    margin: 5px 0 10px;
+    font-weight: bold;
+}
+
+.product-button  {
+    background-color: #c6001d;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #a1021a;
+}
+
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+
+    .sidebar, .main-content {
+        width: 100%;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    gap: 1rem; 
+    padding: 1rem 0; 
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0; 
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-section p,
+.footer-section a {
+    margin: 0.2rem 0;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #ffbcd9;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: #fff;
+    font-size: 1.35rem;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+::-webkit-scrollbar {
+    width: 12px; 
+    height: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="Logo.png" alt="Lululemon Logo" class="logo-image">Lululemon
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html" class="active">Shop</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+        <aside class="sidebar">
+            <h2>Categories</h2>
+            <ul>
+                <li><a href="#featured">Featured Products</a></li>
+                <li><a href="#offers">Special Offers</a></li>
+                <li><a href="#shirts">Shirts</a></li>
+                <li><a href="#pants">Pants</a></li>
+                <li><a href="#hoodies">Hoodies & Sweatshirts</a></li>
+                <li><a href="#acc">Accessories</a>
+                    <ul class="sub-menu">
+                        <li><a href="#bag">Bags</a></li>
+                        <li><a href="#cap">Headwear</a></li>
+                        <li><a href="#equip">Equipment</a></li>
+                    </ul>                
+                </li>
+                <li><a href="#shoes">Shoes</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div class="header-search">
+                <form class="search-form" action="#" method="get">
+                    <input type="text" placeholder="Search products..." class="search-input" name="search">
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+                <a href="https://shop.lululemon.com/shop/mybag" class="cart-icon-link">
+                <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </div>
+
+            <div class="product-section">
+                <h2 id="featured">Featured Products</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="1.png" alt="">
+                        <h3>Scuba Oversized Full-Zip Hoodie</h3>
+                        <p>RM550</p>
+                        <a href="https://shop.lululemon.com/p/womens-outerwear/Scuba-Oversized-Full-Zip/_/prod10440041?color=64244">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="2.png" alt="">
+                        <h3>Scuba Mid-Rise Wide-Leg Pant</h3>
+                        <p>RM505</p>
+                        <a href="https://shop.lululemon.com/p/womens-sweatpants/Scuba-MR-Wide-Leg-Pant-Regular/_/prod11750327?color=64244" style="text-decoration: none;">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="3.png" alt="">
+                        <h3>Steady State Pullover Hoodie</h3>
+                        <p>RM550-RM600</p>
+                        <a href="https://shop.lululemon.com/p/mens-jackets-and-hoodies-hoodies/Steady-State-Pullover-Hoodie/_/prod11750325?color=31382">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="4.png" alt="">
+                        <h3>Steady State Classic-Fit Jogger</h3>
+                        <p>RM505</p>
+                        <a href="https://shop.lululemon.com/p/men-joggers/Steady-State-Classic-Fit-Jogger/_/prod11740065?color=19746">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="5.png" alt="">
+                        <h3>Men's Restfeel Slide</h3>
+                        <p>RM250</p><br>
+                        <a href="https://shop.lululemon.com/p/shoes/M-Restfeel-Slide/_/prod11020880?color=43646">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="6.png" alt="">
+                        <h3>Women's Fleece Restfeel Slide</h3>
+                        <p>RM335</p>
+                        <a href="https://shop.lululemon.com/p/shoes/W-Fleece-Restfeel-Slide/_/prod11750518?color=69075">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-section">
+                <h2 id="offers">Special Offers</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="tote (1).png" alt="tote">
+                        <h3>Daily Multi-Pocket Canvas Tote Bag 20L</h3>
+                        <p>RM210 <strike>RM291</strike></p>
+                        <a href="https://shop.lululemon.com/p/bags/Dly-Mlti-Pckt-Cnvs-Tote-Bag-20L-Logo-MD/_/prod11710136?color=65225&sz=ONESIZE">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="tote (2).png" alt="tote">
+                        <h3>Scuba Oversized Funnel-Neck Half Zip</h3>
+                        <p>RM425 <strike>RM506</strike></p>
+                        <a href="https://shop.lululemon.com/p/womens-outerwear/Scuba-Oversized-Funnel-Neck-Shirt-MD/_/prod10930231?color=48400">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="tote (3).png" alt="tote">
+                        <h3>New Venture Crewneck Sweater</h3>
+                        <p>RM338<strike>RM550</strike></p>
+                        <a href="https://shop.lululemon.com/p/mens-sweaters/New-Venture-Crewneck-Sweater-MD/_/prod11790020?color=32489">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-section">
+                <h2 id="shirt">Shirts</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="Swiftly Tech Cropped Short-Sleeve Shirt 2.0.png" alt="Swiftly Tech Cropped Short-Sleeve Shirt 2.0">
+                        <h3>Swiftly Tech Cropped Short-Sleeve Shirt 2.0</h3>
+                        <p>RM283</p>
+                        <a href="https://shop.lululemon.com/p/womens-t-shirts/Swiftly-Tech-Cropped-SS-Shirt-2/_/prod11520166?color=12826">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Screenshot 2024-10-02 144837.png" alt="Swiftly Tech Short-Sleeve Shirt 2.0 Waist Length">
+                        <h3>Swiftly Tech Short-Sleeve Shirt 2.0 Waist Length</h3>
+                        <p>RM283</p>
+                        <a href="https://shop.lululemon.com/p/womens-t-shirts/Swiftly-Tech-Short-Sleeve-2-Race/_/prod9820343?color=64814">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Screenshot 2024-10-02 144844.png" alt="Swiftly Tech Short-Sleeve Shirt 2.0 Hip Length">
+                        <h3>Swiftly Tech Short-Sleeve Shirt 2.0 Hip Length</h3>
+                        <p>RM283</p>
+                        <a href="https://shop.lululemon.com/p/womens-t-shirts/Swiftly-Tech-SS-2/_/prod9750519?color=66922">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Screenshot 2024-10-02 144944.png" alt="Jersey Training Muscle Tank Top">
+                        <h3>Jersey Training Muscle Tank Top</h3>
+                        <p>RM200</p>
+                        <a href="https://shop.lululemon.com/p/women-tanks/Jersey-Training-Muscle-Tank-Top/_/prod11750262?color=1263">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Screenshot 2024-10-02 144953.png" alt="Jersey Training Short-Sleeve Shirt">
+                        <h3>Jersey Training Short-Sleeve Shirt</h3>
+                        <p>RM241</p>
+                        <a href="https://shop.lululemon.com/p/womens-t-shirts/Jersey-Training-SS-Shirt/_/prod11750184?color=1263">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="222.png" alt="Cates T-shirt">
+                        <h3>Cates T-shirt</h3>
+                        <p>RM200</p>
+                        <br>
+                        <a href="https://shop.lululemon.com/p/womens-t-shirts/Cates-Tee/_/prod9271065?color=31382">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="G1.png" alt="1">
+                        <h3>lululemon Fundamental T-Shirt</h3>
+                        <p>RM241</p>
+                        <a href="https://shop.lululemon.com/p/men-ss-tops/The-Fundamental-T/_/prod9960862?color=26950">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="G2.png" alt="2">
+                        <h3>New Venture Classic-Fit Long-Sleeve Shirt</h3>
+                        <p>RM491</p>
+                        <a href="https://shop.lululemon.com/p/men-ls-tops/New-Venture-Classic-Fit-LS-Shirt-MD/_/prod11480112?color=68208">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="G3.png" alt="3">
+                        <h3>Evolution Short-Sleeve Polo Shirt</h3>
+                        <p>RM366</p>
+                        <a href="https://shop.lululemon.com/p/mens-polos/Evolution-Polo/_/prod6020330?color=16352">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="G4.png" alt="4">
+                        <h3>Metal Vent Tech Long-Sleeve Shirt</h3>
+                        <p>RM366</p>
+                        <a href="https://shop.lululemon.com/p/mens-t-shirts/Metal-Vent-Tech-Long-Sleeve-Shirt-3/_/prod11710149">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="G5.png" alt="5">
+                        <h3>Heavyweight Cotton Jersey Long-Sleeve Shirt</h3>
+                        <p>RM283</p>
+                        <a href="https://shop.lululemon.com/p/mens-t-shirts/Heavyweight-Cotton-Jersey-LS-Shirt/_/prod11680086">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="G6.png" alt="6">
+                        <h3>Soft Jersey Half Zip</h3>
+                        <p>RM408</p><br>
+                        <a href="https://shop.lululemon.com/p/mens-jackets-and-hoodies-hoodies/Soft-Jersey-Half-Zip/_/prod11520160">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+<br>
+            <div class="product-section">
+                <h2 id="pants">Pants</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="Screenshot 2024-10-02 150355.png" alt="Scuba Mid-Rise Wide-Leg Pant">
+                        <h3>Scuba Mid-Rise Wide-Leg Pant</h3>
+                        <p>RM491</p>
+                        <a href="https://shop.lululemon.com/p/womens-sweatpants/Scuba-MR-Wide-Leg-Pant-Regular/_/prod11750327">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Screenshot 2024-10-02 150428.png" alt="Pleat-Front High-Rise Trouser">
+                        <h3>Pleat-Front High-Rise Trouser</h3>
+                        <p>RM616</p>
+                        <a href="https://shop.lululemon.com/p/womens-trousers/Modal-Blend-Pleated-HR-Trouser-Regular/_/prod11750657">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Screenshot 2024-10-02 150523.png" alt="Groove Nulu Super-High-Rise Flared Pant">
+                        <h3>Groove Nulu Super-High-Rise Flared Pant</h3>
+                        <p>RM491</p>
+                        <a href="https://shop.lululemon.com/p/women-pants/Groove-Pant-Flare-Nulu/_/prod9820425">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Screenshot 2024-10-02 150539.png" alt="Softstreme Pintuck Mid-Rise Pant">
+                        <h3>Softstreme Pintuck Mid-Rise Pant</h3>
+                        <p>RM533</p>
+                        <a href="https://shop.lululemon.com/p/women-pants/Softstreme-Pintuck-MR-Pant-Regular/_/prod11750307">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Screenshot 2024-10-02 150622.png" alt="Scuba Mid-Rise Oversized Jogger">
+                        <h3>Scuba Mid-Rise Oversized Jogger</h3>
+                        <p>RM491</p>
+                        <a href="https://shop.lululemon.com/p/womens-joggers/Scuba-MR-Oversized-Jogger-Regular/_/prod11670121">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Screenshot 2024-10-02 154016.png" alt="City Sleek Mid-Rise Barrel-Leg Pant
+                        Light Utilitech">
+                        <h3>City Sleek Mid-Rise Barrel-Leg Pant
+                            Light Utilitech</h3>
+                        <p>RM533</p>
+                        <a href="https://shop.lululemon.com/p/women-pants/City-Sleek-Barrel-Pant-Light-Utilitech/_/prod11530133">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="ABC Warpstreme Pull-On Pant.png" alt="1">
+                        <h3>ABC Warpstreme Pull-On Pant</h3>
+                        <p>RM412</p>
+                        <a href="https://shop.lululemon.com/p/mens-trousers/ABC-Pull-On-Pant-27/_/prod11250141">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Soft Jersey Jogger.png" alt="2">
+                        <h3>Soft Jersey Jogger</h3>
+                        <p>RM412</p><br>
+                        <a href="https://shop.lululemon.com/p/womens-joggers/Soft-Jersey-Classic-MR-Jogger/_/prod11530266">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Seamless Base Layer Tight.png" alt="3">
+                        <h3>Seamless Base Layer Tight 27"</h3>
+                        <p>RM540</p>
+                        <a href="https://shop.lululemon.com/p/men-tights/Seamless-Base-Layer-Tight-27/_/prod11750532">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Zeroed In Slim-Fit Pant.png" alt="4">
+                        <h3>Zeroed In Slim-Fit Pant</h3>
+                        <p>RM412</p><br>
+                        <a href="https://shop.lululemon.com/p/men-joggers/Zeroed-In-Slim-Fit-Pant/_/prod11740101">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Done.png" alt="5">
+                        <h3>Commission Classic-Fit Pant 32"L</h3>
+                        <p>RM540</p>
+                        <a href="https://shop.lululemon.com/p/mens-trousers/Commission-Pant-Classic-Warpstreme-32/_/prod9510026">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="DOne (2).png" alt="6">
+                        <h3>ABC Relaxed-Fit 5 Pocket Pant 32"L Warpstreme</h3>
+                        <p>RM540</p>
+                        <a href="https://shop.lululemon.com/p/men-pants/ABC-Relaxed-Fit-Pant-32-Warpstreme/_/prod11520251">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+<br>
+            <div class="product-section">
+                <h2 id="hoodies">Hoodies & Sweatshirts</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src= "Pink.png" alt="1">
+                        <h3>Scuba Oversized Full-Zip Hoodie</h3>
+                        <p>RM533</p>
+                        <a href="https://shop.lululemon.com/p/womens-outerwear/Scuba-Oversized-Full-Zip/_/prod10440041">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="white.png" alt="2">
+                        <h3>Define Jacket Nulu</h3>
+                        <p>RM491</p><br>
+                        <a href="https://shop.lululemon.com/p/jackets-and-hoodies-jackets/Define-Jacket-Nulu/_/prod11020158">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Expresso.png" alt="3">
+                        <h3>Softstreme Perfectly Oversized Cropped Crew</h3>
+                        <p>RM491</p>
+                        <a href="https://shop.lululemon.com/p/womens-outerwear/Oversized-Crop-Crew-Softstreme/_/prod10520351">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="lilak.png" alt="4">
+                        <h3>Brushed Softstreme Half Zip</h3>
+                        <p>RM491</p> <br>
+                        <a href="https://shop.lululemon.com/p/womens-outerwear/Brushed-Softstreme-Half-Zip/_/prod11680498">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="sagee.png" alt="5">
+                        <h3>It's Rulu Fleece Half Zip</h3>
+                        <p>RM491</p> <br>
+                        <a href="https://shop.lululemon.com/p/tops-long-sleeve/Rulu-Fleece-Half-Zip/_/prod11750313">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="black.png" alt="6">
+                        <h3>Scuba Oversized Pullover Wordmark</h3>
+                        <p>RM491</p>
+                        <a href="https://shop.lululemon.com/p/womens-outerwear/Scuba-Oversized-Pullover-Wordmark/_/prod11750452">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Waffle.png" alt="1">
+                        <h3>Waffle-Knit Half Zip</h3>
+                        <p>RM540</p><br>
+                        <a href="https://shop.lululemon.com/p/mens-jackets-and-hoodies-hoodies/Waffle-Knit-Half-Zip/_/prod11570599">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Smooth Spacer Classic-Fit Crew.png" alt="2">
+                        <h3>Smooth Spacer Classic-Fit Crew</h3>
+                        <p>RM540</p>
+                        <a href="https://shop.lululemon.com/p/mens-jackets-and-hoodies-hoodies/Smooth-Spacer-Classic-Fit-Crew/_/prod11680022">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Smooth Spacer Classic-Fit Pullover Hoodie.png" alt="3">
+                        <h3>Smooth Spacer Classic-Fit Pullover Hoodie</h3>
+                        <p>RM580</p>
+                        <a href="https://shop.lululemon.com/p/mens-jackets-and-hoodies-hoodies/Smooth-Spacer-Classic-Pullover-Hoodie/_/prod11680100">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Screenshot 2024-10-03 185243.png" alt="4">
+                        <h3>Steady State Crew Graphic</h3>
+                        <p>RM455</p><br>
+                        <a href="https://shop.lululemon.com/p/mens-jackets-and-hoodies-hoodies/Steady-State-Crew-Graphic/_/prod11520259">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Softstreme Oversized-Fit Long-Sleeve Henley.png" alt="4">
+                        <h3>Softstreme Oversized-Fit Long-Sleeve Henley</h3>
+                        <p>RM250 <strike>RM500</strike></p>
+                        <a href="https://shop.lululemon.com/p/mens-jackets-and-hoodies-hoodies/Softstreme-Oversized-Fit-LS-Henley-MD/_/prod11570176">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="Textured Double-Knit Cotton Hoodie.png" alt="4">
+                        <h3>Textured Double-Knit Cotton Hoodie</h3>
+                        <p>RM460</p>
+                        <a href="https://shop.lululemon.com/p/mens-jackets-and-hoodies-hoodies/Textured-Double-Knit-Cotton-Hoodie/_/prod11520062">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                </div>
+        </div>
+    
+        <div class="product-section">
+            <h1 id="acc">Accessories</h1>
+            <h2 id="bag">Bags</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="Bluebag.png" alt="1">
+                    <h3>Everywhere Belt Bag 1L</h3>
+                    <p>RM160-RM202</p><br>
+                    <a href="https://shop.lululemon.com/p/bags/Everywhere-Belt-Bag/_/prod8900747">
+                        <button class="product-button">Add to Cart</button>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <img src="clearr.png" alt="2">
+                    <h3>Everywhere Belt Bag 1L Clear</h3>
+                    <p>RM160</p>
+                    <a href="https://shop.lululemon.com/p/bags/Clear-Belt-Bag-Logo-1L/_/prod11520032">
+                        <button class="product-button">Add to Cart</button>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <img src="bowlbag.png" alt="3">
+                    <h3>City Adventurer Belt Bag</h3>
+                    <p>RM290</p><br>
+                    <a href="https://shop.lululemon.com/p/bags/City-Adventurer-Belt-Bag/_/prod11380005">
+                        <button class="product-button">Add to Cart</button>
+                    </a>
+                </div>
+                </div>
+            </div>
+<br>
+    <div class="product-section">
+        <h2 id="cap">Headwear</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="ny.png" alt="1">
+                <h3>Nylon Bucket Hat</h3>
+                <p>RM122-RM164</p><br>
+                <a href="https://shop.lululemon.com/p/accessories/Nylon-Bucket-Hat/_/prod11680320">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="noth.png" alt="2">
+                <h3>Both Ways Reversible Bucket Hat</h3>
+                <p>RM100</p>
+                <a href="https://shop.lululemon.com/p/accessories/Both-Ways-Bucket-Hat-Update-MD/_/prod10210070">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="trademark.png" alt="4">
+                <h3>Unisex Classic Ball Cap Wordmark</h3>
+                <p>RM160</p>
+                <a href="https://www.lululemon.com.hk/en-my/p/unisex-classic-ball-cap-wordmark/prod11700328.html?dwvar_prod11700328_color=67888">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="wovenfree.png" alt="5">
+                <h3>Fast and Free Running Hat WovenAir</h3>
+                <p>RM160</p>
+                <a href="https://shop.lululemon.com/p/hats/Fast-and-Free-Running-Hat-WovenAir/_/prod11720261">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="Tucker.png" alt="6">
+                <h3>Trucker Hat</h3>
+                <p>RM160</p><br>
+                <a href="https://shop.lululemon.com/p/hats/Trucker-Hat-Logo/_/prod11020363">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+        </div>
+    </div>
+<br>
+    <div class="product-section">
+        <h2 id="equip">Equipment</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="back to life bottle.png" alt="1">
+                <h3>Back to Life Sport Bottle 32oz Straw Lid</h3>
+                <p>RM220</p>
+                <a href="https://shop.lululemon.com/p/water-bottles/Back-to-Life-Sport-Bottle-32oz-Straw-Lid/_/prod11750054?sz=ONESIZE">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="Lightweight mat.png" alt="2">
+                <h3>The Lightweight Mat 5mm</h3>
+                <p>RM355</p><br>
+                <a href="https://shop.lululemon.com/p/yoga-mats/The-Lightweight-Mat-5mm/_/prod11520165?sz=ONESIZE">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="running armband.png" alt="3">
+                <h3>Fast and Free Running Armband</h3>
+                <p>RM160</p>
+                <a href="https://shop.lululemon.com/p/bags/Fast-and-Free-Run-Arm-Band/_/prod10190170">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="running vest.png" alt="4">
+                <h3>Fast and Free Trail Running Vest</h3>
+                <p>RM582</p>
+                <a href="https://shop.lululemon.com/p/accessories/Fast-and-Free-Trail-Running-Vest/_/prod11380624">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="stretching strap.png" alt="5">
+                <h3>No Limits Stretching Strap</h3>
+                <p>RM75</p><br>
+                <a href="https://shop.lululemon.com/p/yoga-accessories/No-Limits-Stretching-Strap/_/prod3470019">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="training gloves.png" alt="6">
+                <h3>License to Train Training Gloves</h3>
+                <p>RM177</p>
+                <a href="https://shop.lululemon.com/p/gloves-mittens/License-to-Train-Training-Glove/_/prod9820513">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="workout sliders.png" alt="6">
+                <h3>Workout Sliders</h3>
+                <p>RM118</p>
+                <a href="https://shop.lululemon.com/p/accessories/Workout-Sliders-Set-of-2/_/prod11020385">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+        </div>
+    </div>
+<br>
+    <div class="product-section">
+        <h1 id="shoes">Shoes</h1>
+        <div class="product-grid">
+            <div class="product-card">
+                <img src="1st.png" alt="1">
+                <h3>Women's Beyondfeel Trail Running Shoe</h3>
+                <p>RM708</p>
+                <a href="https://shop.lululemon.com/p/shoes/Beyondfeel-W-Trail-Running-Shoe/_/prod11720085">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="3rd.png" alt="2">
+                <h3>Women's Cityverse Sneaker</h3>
+                <p>RM582</p>
+                <a href="https://shop.lululemon.com/p/shoes/Cityverse-Womens-Sneaker/_/prod11680596">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="7th.png" alt="3">
+                <h3>Men's Cityverse Canvas Sneaker</h3>
+                <p>RM582</p>
+                <a href="https://shop.lululemon.com/p/shoes/Cityverse-M-Canvas-Sneaker/_/prod11720183">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="11th.png" alt="4">
+                <h3>Women's Restfeel Sandal</h3>
+                <p>RM330</p><br>
+                <a href="https://shop.lululemon.com/p/shoes/Restfeel-Womens-Sandal/_/prod11720259">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="17th.png" alt="5">
+                <h3>Men's Restfeel Slide Graphic</h3>
+                <p>RM245</p>
+                <a href="https://shop.lululemon.com/p/shoes/M-Restfeel-Slide-Graphic/_/prod11710181">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <img src="18th.png" alt="6">
+                <h3>Women's Chargefeel 2 Mid Workout Shoe</h3>
+                <p>RM625</p>
+                <a href="https://shop.lululemon.com/p/shoes/W-Chargefeel-Workout-Mid-2/_/prod11500243">
+                    <button class="product-button">Add to Cart</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+         </main></div>
+         
+
+            <footer>
+                <div class="footer-container">
+                    <div class="footer-section">
+                        <h3>CUSTOMER CARE</h3>
+                        <p><strong>Phone Number:</strong> 1-877-263-9300</p>
+                        <p><strong>Email:</strong> customercare@lululemon.me</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>POLICIES</h3>
+                        <p><a href="https://shop.lululemon.com/help/legal/terms-of-use">Terms & Conditions</a></p>
+                        <p><a href="https://shop.lululemon.com/help/return/policy">Return Policy</a></p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>FOLLOW US</h3>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/lululemon" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/lululemon/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://x.com/lululemon/" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.tiktok.com/@lululemon" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                            <a href="https://www.pinterest.com/lululemon/" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Lululemon. Eng Zhi Cheng. All rights reserved.</p>
+                </div>
+            </footer>     
+</body>
+</html>
+
+<script>
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+const cartToggleButton = document.querySelector('.cart-toggle');
+const cartElement = document.getElementById('cart');
+const cartItemsList = document.getElementById('cart-items');
+const totalPriceElement = document.getElementById('total');
+const closeCartButton = document.querySelector('.close-cart');
+
+let cart = [];
+
+// Add product to the cart
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const productName = button.getAttribute('data-product');
+        const productPrice = parseFloat(button.getAttribute('data-price'));
+        
+        const product = { name: productName, price: productPrice };
+        cart.push(product);
+        updateCart();
+    });
+});
+
+// Toggle cart visibility
+cartToggleButton.addEventListener('click', () => {
+    cartElement.style.display = cartElement.style.display === 'block' ? 'none' : 'block';
+});
+
+// Close the cart
+closeCartButton.addEventListener('click', () => {
+    cartElement.style.display = 'none';
+});
+
+// Update cart display
+function updateCart() {
+    if (cart.length === 0) {
+        cartItemsList.innerHTML = '<li class="empty-cart">Your cart is empty</li>';
+    } else {
+        cartItemsList.innerHTML = '';
+        cart.forEach((item, index) => {
+            const listItem = document.createElement('li');
+            listItem.innerHTML = `
+                ${item.name} - $${item.price.toFixed(2)} 
+                <button onclick="removeFromCart(${index})">Remove</button>
+            `;
+            cartItemsList.appendChild(listItem);
+        });
+    }
+
+    // Update total price
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    totalPriceElement.textContent = total.toFixed(2);
+}
+
+// Remove item from cart
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+</script>

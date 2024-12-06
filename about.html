@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Lululemon's mission, values, and community impact. Join us in our journey towards well-being.">
+    <title>Lululemon - About Us</title>
+    <script src="https://kit.fontawesome.com/5a8e77b133.js" crossorigin="anonymous"></script>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffbcd9;
+    padding: 0.5rem 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-image {
+    width: 80px; 
+    height: auto;
+    margin-top: -10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem; 
+    align-items: center;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem; 
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: #ebdbea;
+    border-radius: 4px;
+    color: #e60023;
+}
+
+#about {
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #ffffff, #e0e7ee);
+    max-width: 1000px;
+    margin: 2.3rem auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.headline {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.story-container {
+    margin-bottom: 2rem;
+}
+
+.story-content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.story-image {
+    max-width: 60%; 
+    height: auto; 
+    border-radius: 10px;
+    margin-top: -60px;
+    margin-left: 20px; 
+}
+
+.subheadline {
+    font-size: 2rem;
+    color: #e60023; 
+    margin: 1.5rem 0;
+}
+
+.cta-button {
+    background-color: #e60023; 
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.cta-button:hover {
+    background-color: #b30019; 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+.core-list {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.button-container {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#our-team {
+    background-color: #fff;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 2.3rem auto;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5em;
+    color: #e60023;
+    margin-bottom: 20px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
+}
+
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.team-member {
+    position: relative;
+    overflow: hidden; 
+    cursor: pointer;
+    margin: 20px 0;
+}
+
+.team-member-image {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.team-member:hover .team-member-image {
+    transform: scale(1.1);
+}
+
+.team-member h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+    line-height: 1.2;
+    max-height: 3.6em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); /* Black with transparency */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    gap: 1rem; 
+    padding: 1rem 0; 
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0; 
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-section p,
+.footer-section a {
+    margin: 0.5rem 0;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f1beef;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: #fff;
+    font-size: 1.35rem;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+.community-container {
+    display: flex;
+    align-items: flex-start; 
+    margin-bottom: 2rem; 
+}
+
+.community-text {
+    flex: 1; 
+    margin-right: 20px; 
+}
+
+.comm-image {
+    max-width: 40%; 
+    height: auto; 
+    border-radius: 10px;
+    transition: 0.3s;
+ }
+ 
+.comm-image:hover{
+    transform: scale(1.10)
+}
+
+.story-image {
+    max-width: 40%; 
+    height: auto; 
+    transition: 0.3s;
+}
+
+.story-image:hover{
+    transform: scale(1.20)
+}
+
+.button-container {
+    margin-top: 1rem; 
+}
+
+.cta-button {
+    background-color: #e60023; 
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.cta-button:hover {
+    background-color: #b30019; 
+    transform: scale(1.05); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+.lululemon-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    font-family: 'Poppins', sans-serif;
+}
+
+.lululemon-container h1, .lululemon-container h2 {
+    color: #e60023; 
+    text-transform: uppercase;
+}
+
+.lululemon-container h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1rem;
+}
+
+.lululemon-milestones,
+.lululemon-awards,
+.lululemon-innovations,
+.lululemon-community,
+.lululemon-gallery,
+.lululemon-join-us {
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.lululemon-milestones:hover,
+.lululemon-awards:hover,
+.lululemon-innovations:hover,
+.lululemon-community:hover,
+.lululemon-gallery:hover,
+.lululemon-join-us:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+.lululemon-milestones ul,
+.lululemon-awards ul,
+.lululemon-innovations ul,
+.lululemon-community ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.lululemon-milestones li,
+.lululemon-awards li,
+.lululemon-innovations li,
+.lululemon-community li {
+    background: #f7f7f7; 
+    margin: 10px 0;
+    padding: 12px 15px;
+    border-left: 5px solid #e60023; 
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.lululemon-milestones li:hover,
+.lululemon-awards li:hover,
+.lululemon-innovations li:hover,
+.lululemon-community li:hover {
+    background: #e8e8e8;}
+
+
+.lululemon-testimonials blockquote::before {
+    content: "“";
+    font-size: 3rem;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    color: #1abc9c;
+    opacity: 0.5;
+}
+
+.lululemon-gallery .gallery-images {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.lululemon-gallery .gallery-images img {
+    width: calc(30% - 10px);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.lululemon-gallery .gallery-images img:hover {
+    transform: scale(1.05);
+}
+
+.lululemon-join-us {
+    text-align: center;
+    background: #f0f8ff; 
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.lululemon-join-us a {
+    color: #e60023; 
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.lululemon-join-us a:hover {
+    color: #c70421; 
+}
+
+::-webkit-scrollbar {
+    width: 12px; 
+    height: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo" aria-label="Lululemon Homepage">
+                    <img src="Logo.png" alt="Lululemon Logo" class="logo-image">Lululemon
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html" aria-label="About Us">About Us</a></li>
+                    <li><a href="shop.html" aria-label="Shop">Shop</a></li>
+                    <li><a href="contact.html" aria-label="Contact Us">Contact Us</a></li>
+                    <li><a href="FAQ.html" aria-label="FAQ">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="container">
+            <h1 class="headline">Lululemon: From Yoga Studio to Global Movement</h1>
+            <div class="story-container">
+                <h2 class="subheadline">Our Story: A Journey of Innovation</h2>
+                <div class="story-content">
+                    <div class="story-text">
+                        <p><strong>Vancouver, 1998</strong> — Lululemon was founded with a vision to create high-quality athletic apparel, blending function, style, and innovation. What started as a small studio soon became a worldwide phenomenon. Initially focused on yoga, Lululemon’s passion now extends to various fitness forms, ensuring support for every active lifestyle.</p>
+                    </div>
+                    <img src="story-image.jpeg" alt="Our Story" class="story-image">
+                </div>
+            </div>
+            
+            </div>
+            <h2 class="subheadline">Mission: Unleashing Potential</h2>
+            <p><strong>Our Mission:</strong> To elevate the world by helping individuals realize their potential. Our goal is to foster well-being and connectedness for a healthier, happier world.</p>
+            <h2 class="subheadline">Core Values: What Drives Us</h2>
+            <ul class="core-list">
+                <li><strong>Connection:</strong> Building meaningful relationships with customers, teams, and communities.</li>
+                <li><strong>Well-being:</strong> Inspiring balance of mind, body, and spirit.</li>
+                <li><strong>Innovation:</strong> Leading in fabric, technology, and design to enhance performance.</li>
+                <li><strong>Inclusion:</strong> Creating a welcoming space for all, embracing diversity.</li>
+            </ul>
+             <h2 class="subheadline">Community Impact: A Force for Change</h2>
+                <div class="community-container">
+                    <div class="community-text">
+                    <p>Through our <strong>Here to Be</strong> program, we partner with local organizations to promote well-being through movement and mindfulness. From yoga to workshops, our initiatives aim to make a positive impact.</p>
+                       <div class="button-container">
+                       <button class="cta-button">Join Us Today</button>
+                       </div>
+                    </div>
+                    <img src="Comun.png" alt="Community Event" class="comm-image">
+                </div>
+        </section>
+
+        <section id="our-team">
+            <h2>Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member" data-name="Calvin McDonald, Chief Executive Officer" data-description="Calvin McDonald is the leader of lululemon, driving double-digit annual revenue growth and aiming to quadruple international business from 2021 levels. He joined lululemon in August 2018 and serves on its Board of Directors. Under his leadership, the brand is committed to ensuring 100% of its products are made with sustainable materials by 2030. He holds an MBA from the University of Toronto.">
+                    <img src="Calvin.jpeg" alt="Calvin McDonald" class="team-member-image">
+                    <h3>Calvin McDonald</h3>
+                </div>
+                <div class="team-member" data-name="Julie Averill, Executive Vice President, Chief Information Officer" data-description="Julie Averill joined lululemon in 2017, where she has been instrumental in leveraging technology to transform the retail business and enhance guest experiences. Before lululemon, she was REI’s first Chief Information Officer and spent over a decade at Nordstrom in key IT leadership roles. Averill holds an MBA from the University of Washington and a BA in computer science from Seattle Pacific University. She is active on several STEM non-profit boards and enjoys pilates, yoga, and spending time with her family.">
+                    <img src="Julia.jpeg" alt="Julie Averill" class="team-member-image">
+                    <h3>Julie Averill</h3>
+                </div>
+                <div class="team-member" data-name="Celeste Burgoyne, President, Americas and Global Guest Innovation" data-description="Celeste Burgoyne has been with lululemon since 2006, serving in roles including Executive Vice President, Americas and Global Guest Innovation, and Senior Vice President, Retail, North America. She began her career at Abercrombie & Fitch, where she held various positions, including Senior Director of Stores. Burgoyne holds a Bachelor of Arts from the University of San Diego. An avid runner and yogi, she enjoys living in Vancouver with her two young boys and visiting Whistler.">
+                    <img src="Celeste.jpeg" alt="Celeste Burgoyne" class="team-member-image">
+                    <h3>Celeste Burgoyne</h3>
+                </div>
+                <div class="team-member" data-name="Jonathan Cheung, Global Creative Director" data-description="Jonathan Cheung joined lululemon in 2024, overseeing product design and development. He brings over 30 years of experience in senior creative leadership roles, having recently consulted for brands like Gap Inc. and Mattel Inc. Cheung was previously Senior Vice President of Design at Levi’s and has worked with fashion icons Franco Moschino and Giorgio Armani. He has a lifelong interest in martial arts and physical culture.">
+                    <img src="John.jpeg" alt="Jonathan Cheung" class="team-member-image">
+                    <h3>Jonathan Cheung</h3>
+                </div>
+                <div class="team-member" data-name="Ted Dagnese, Chief Supply Chain Officer" data-description="Ted Dagnese joined lululemon in 2016, leading supply chain management, including global vendor relations, product quality, and logistics. Previously, he was Vice President of Supply Chain at VF Corporation and Senior Director at Gap, Inc. Dagnese holds an MS in engineering economics from Stanford, an MS in electrical engineering from Northeastern, and a BS and BA from Purdue. He also serves on the board of the American Apparel & Footwear Association and enjoys working out and spending time with his family.">
+                    <img src="Ted.jfif" alt="Ted" class="team-member-image">
+                    <h3>Ted Dagnese</h3>
+                </div>
+                <div class="team-member" data-name="Meghan Frank, Chief Financial Officer" data-description="Meghan Frank joined lululemon in 2016 and leads finance, tax, treasury, investor relations, and other key functions. She served as SVP of Financial Planning and Analysis and was interim co-CFO before becoming CFO in November 2020. Previously, Frank held senior finance roles at Ross Stores and J.Crew. She earned her BA in Economics from Colgate University and enjoys skiing with her family.">
+                    <img src="Meg.jpeg" alt="Meghan Frank" class="team-member-image">
+                    <h3>Meghan Frank</h3>
+                </div>
+                <div class="team-member" data-name="Susan Gelinas, Chief People & Culture Officer" data-description="Susan Gelinas joined lululemon in 2011 and leads the global People & Culture team, overseeing talent attraction, development, retention, and organizational culture. She has held roles including Senior Vice President and Vice President of Health & Wealth. Prior to lululemon, Gelinas was a Senior Consultant at Willis Towers Watson. In her spare time, she enjoys running with friends on tracks, trails, and roads.">
+                    <img src="Susiw.jpeg" alt="Susan" class="team-member-image">
+                    <h3>Susan Gelinas</h3>
+                </div>
+                <div class="team-member" data-name="Shannon Higginson, Chief Legal and Compliance Officer" data-description="Shannon Higginson joined lululemon in 2011 and leads the global Legal and Compliance team, overseeing legal risk and compliance strategies. She previously served as Senior Vice President, General Counsel, and Chief Compliance Officer. Before lululemon, Higginson was Senior Counsel at TELUS and an associate at a Vancouver law firm. She holds a JD from the University of Victoria and a BA from the University of British Columbia. Higginson lives in Vancouver with her husband and two daughters and enjoys running, tennis, and yoga.">
+                    <img src="Sha.jpeg" alt="Susan" class="team-member-image">
+                    <h3>Shannon Higginson</h3>
+                </div>
+                <div class="team-member" data-name="André Maestrini, Executive Vice President, International" data-description="André Maestrini leads lululemon's teams in EMEA, APAC, and Mainland China to drive global growth. He has 14 years of experience at adidas, where he oversaw a multibillion-dollar business and expanded operations in China, France, and Latin America. Maestrini holds a master’s degree in Marketing from ESSEC Business School and lives in London with his family. He is an avid runner and passionate about scuba diving.">
+                    <img src="And.jpeg" alt="André" class="team-member-image">
+                    <h3>André Maestrini</h3>
+                </div>
+                <div class="team-member" data-name="Nikki Neuburger, Chief Brand & Product Activation Officer" data-description="Nikki Neuburger joined lululemon in 2020 as Chief Brand Officer, driving global brand initiatives, marketing, and sustainability. In 2024, her role expanded to oversee product merchandising, research and innovation, and footwear, uniting brand and product leadership. Previously, she was Global Head of Marketing for Uber Eats and spent 14 years at Nike, serving as Global Brand Vice President of Nike Running. Neuburger holds a Bachelor of Science in Business Administration from Oregon State University and is a lifelong athlete, having captained her college volleyball team and completed several marathons.">
+                    <img src="Nikki.jpeg" alt="Nikki" class="team-member-image">
+                    <h3>Nikki Neuburger</h3>
+                </div>
+            </div>
+        </section>
+    
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="modal-name"></h3>
+                <p id="modal-description">Full description will appear here.</p>
+            </div>
+        </div>
+
+        <div class="lululemon-container">
+            <h1>Awards and Achievements</h1>
+            <p>Welcome to our Awards and Achievements page! Here, we celebrate Lululemon’s dedication to innovation, sustainability, and community engagement.</p>
+    
+            <section class="lululemon-milestones">
+                <h2>Company Milestones</h2>
+                <ul>
+                    <li><strong>1998</strong>: Founded in Vancouver, Canada</li>
+                    <li><strong>2000</strong>: First Standalone Store </li>
+                    <li><strong>2011</strong>: Went public, trading on the NASDAQ under the ticker symbol LULU.</li>
+                </ul>
+            </section>
+    
+            <section class="lululemon-awards">
+                <h2>Awards and Recognition</h2>
+                <ul>
+                    <li>Lululemon has consistently been recognized as one of the best workplaces, including being featured on Forbes' list of "America's Best Employers."</li>
+                    <li>The brand has been recognized for its efforts in sustainability, including initiatives to reduce its environmental impact.</li>
+                </ul>
+            </section>
+    
+            <section class="lululemon-innovations">
+                <h2>Product Innovations</h2>
+                <ul>
+                    <li>Luon Fabric Development</li>
+                    <li>Nulu Fabric Launch</li>
+                </ul>
+            </section>
+    
+            <section class="lululemon-community">
+                <h2>Community Engagement</h2>
+                <ul>
+                    <li>Local Ambassador</li>
+                    <li>Free Yoga Classes</li>
+                </ul>
+            </section>
+    
+            <section class="lululemon-gallery">
+                <h2>Gallery</h2>
+                <div class="gallery-images">
+                    <img src="luluimage.jpeg" alt="Award Image 1">
+                    <img src="luluimage2.jpeg" alt="Award Image 2">
+                    <img src="luluimage3.jpeg" alt="Award Image 3">
+                </div>
+            </section>
+    
+            <section id="why-choose-us">
+                <h2>Why Choose Lululemon?</h2>
+                <p>Lululemon is dedicated to enhancing your active lifestyle with high-quality apparel designed for performance and comfort. Our proprietary fabrics, such as Luon and Nulu, offer exceptional stretch, breathability, and moisture-wicking properties, ensuring you feel great during any activity. We are committed to sustainability, aiming to use 100% sustainable materials by 2030, which reflects our responsibility to the planet. Our community engagement fosters genuine connections through local events and fitness classes, encouraging a holistic approach to health and wellness. With innovative designs and a focus on inclusivity in sizing, Lululemon empowers everyone to find their perfect fit. Choosing Lululemon means embracing a lifestyle that prioritizes quality, community, and well-being.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>CUSTOMER CARE</h3>
+                <p><strong>Phone Number:</strong> 1-877-263-9300</p>
+                <p><strong>Email Address:</strong> <a href="mailto:customercare@lululemon.me">customercare@lululemon.me</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>POLICIES</h3>
+                <ul>
+                    <li><a href="https://shop.lululemon.com/help/legal/terms-of-use">Terms & Conditions</a></li>
+                    <li><a href="https://shop.lululemon.com/help/return/policy">Return Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/lululemon" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/lululemon/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/lululemon/" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@lululemon" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.pinterest.com/lululemon/" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Lululemon. Eng Zhi Cheng. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = document.getElementById("modal");
+            const modalName = document.getElementById("modal-name");
+            const modalDescription = document.getElementById("modal-description");
+            const closeModal = document.getElementsByClassName("close")[0];
+    
+            // Select all team member elements
+            document.querySelectorAll('.team-member').forEach(member => {
+                member.addEventListener('click', () => {
+                    // Set the modal content
+                    modalName.textContent = member.getAttribute("data-name");
+                    modalDescription.textContent = member.getAttribute("data-description");
+                    // Show the modal
+                    modal.style.display = "block";
+                });
+            });
+    
+            // Close the modal when the user clicks on <span> (x)
+            closeModal.addEventListener('click', () => {
+                modal.style.display = "none";
+            });
+    
+            // Close the modal when the user clicks anywhere outside of the modal
+            window.onclick = function(event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+        });
+    </script>    
+
+</body>
+</html>

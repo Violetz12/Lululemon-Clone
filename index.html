@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5a8e77b133.js" crossorigin="anonymous"></script>
+    <title>Lululemon - Home</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"); 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffbcd9;
+    padding: 0.5rem 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo-image {
+    width: 80px; 
+    height: auto;
+    margin-top: -10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem; 
+    align-items: center;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem; 
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: #ebdbea;
+    border-radius: 4px;
+    color: #e60023;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column; 
+        align-items: center;
+    }
+}
+
+.hero {
+    background-image: linear-gradient(rgba(0,0,0, 0.75), rgba(0,0,0,0.75)), url(Backgroundlulu.jpeg);
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 5rem 1rem;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #f1beef;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: #e0acdf;
+}
+
+section {
+    padding: 2rem 1rem;
+}
+
+.featured-products {
+    background: #f9f9f9;
+    padding: 2rem 0;
+}
+
+.product-scroll {
+    overflow-x: auto; 
+    padding: 1rem 0; 
+    white-space: nowrap; 
+}
+
+.product-grid {
+    display: inline-flex; 
+    gap: 1rem; 
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    min-width: 250px;
+    text-align: center; 
+    position: relative; 
+    overflow: hidden;  
+}
+
+.product-image {
+    display: block;
+    width: 100%; 
+    border-radius: 15px;
+    height: 400px;
+    object-fit: cover; 
+}
+    
+
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.product-card p {
+    color: #333;  
+    font-weight: bold;
+}
+
+.product-button {
+    background-color: #c6001d;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+.product-card button:hover {
+    background-color: #a1021a;
+}
+
+.description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+    white-space: wrap;
+}
+
+.product-card:hover .description {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.product-card:hover button {
+    z-index: 3;
+}
+
+@media (max-width: 768px) {
+    .product-grid {
+        flex-direction: column;
+    }
+}
+
+.latest-news {
+    background: #e9ecef;
+    padding: 2rem 1rem;
+}
+
+.latest-news h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.news-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.news-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 300px;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+
+.news-item h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+}
+
+.news-item p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.news-item:hover{
+    transform: scale(1.05);
+}
+
+.news-item .btn {
+    background: #f1beef;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.news-item .btn:hover {
+    background: #e0acdf;
+}
+
+.testimonials {
+    background: #f9f9f9;
+    padding: 2rem 1rem;
+}
+
+.testimonials h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #f1beef;
+}
+
+.testimonials-horizontal {
+    display: flex;
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .testimonials-horizontal {
+        flex-direction: column; 
+        overflow-x: visible;    
+        align-items: center;    
+    }
+}
+
+.testimonial-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5rem;
+    position: relative;
+    margin: 1rem 0;
+}
+
+.testimonial-card:after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card h3 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.testimonial-card p:last-of-type {
+    font-style: italic;
+    color: #777;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+    gap: 1rem; 
+    padding: 1rem 0; 
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0; 
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-section p,
+.footer-section a {
+    margin: 0.5rem 0;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #f1beef;
+}
+
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: #fff;
+    font-size: 1.35rem;
+    text-decoration: none;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+}
+
+::-webkit-scrollbar {
+    width: 12px; 
+    height: 12px; 
+}
+
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <img src="Logo.png" alt="Logo Image" class="logo-image">Lululemon
+                </a>
+                <ul class="nav-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Elevate Your Style</h1>
+            <p>Explore the latest trends in fashion and discover new favorites.</p>
+            <a href="shop.html" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section class="featured-products">
+        <div class="container">
+            <h2>Featured Products</h2>
+            <div class="product-scroll">
+                <div class="product-grid">
+                    <div class="product-card">
+                        <img src="1.png" alt="Scuba Oversized Full-Zip Hoodie" class="product-image">
+                        <div class="description">
+                            A cozy, oversized hoodie made from soft, stretchy fabric, designed for warmth and style. Features a high collar and a roomy hood, perfect for layering.
+                        </div>
+                        <h3>
+                            <span class="product-name">Scuba Oversized Full-Zip Hoodie</span>
+                        </h3>
+                        <p>RM560</p>
+                        <a href="https://shop.lululemon.com/p/womens-outerwear/Scuba-Oversized-Full-Zip/_/prod10440041?color=64244">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                        
+
+                    </div>
+                    <div class="product-card">
+                        <img src="2.png" alt="Scuba Mid-Rise Wide-Leg Pant" class="product-image">
+                        <div class="description">
+                            Comfortable wide-leg pants crafted from lightweight, breathable fabric, offering a relaxed fit that's perfect for both workouts and casual wear.
+                        </div>
+                        <h3>
+                            <span class="product-name">Scuba Mid-Rise Wide-Leg Pant</span>
+                        </h3>
+                        <p>RM505</p>
+                        <a href="https://shop.lululemon.com/p/womens-sweatpants/Scuba-MR-Wide-Leg-Pant-Regular/_/prod11750327?color=64244" style="text-decoration: none;">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                        
+                    </div>
+                    <div class="product-card">
+                        <img src="3.png" alt="Steady State Pullover Hoodie" class="product-image">
+                        <div class="description">
+                            A versatile pullover designed for layering, featuring a relaxed fit and soft fabric, making it ideal for lounging or post-workout wear.
+                        </div>
+                        <h3>
+                            <span class="product-name">Steady State Pullover Hoodie</span>
+                        </h3>
+                        <p>RM550-600</p>
+                        <a href="https://shop.lululemon.com/p/mens-jackets-and-hoodies-hoodies/Steady-State-Pullover-Hoodie/_/prod11750325?color=31382">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="4.png" alt="Steady State Classic-Fit Jogger" class="product-image">
+                        <div class="description">
+                            Classic-fit joggers made from soft, stretchy material that moves with you, perfect for workouts or lounging around.
+                        </div>
+                        <h3>
+                            <span class="product-name">Steady State Classic-Fit Jogger</span>
+                        </h3>
+                        <p>RM505</p>
+                        <a href="https://shop.lululemon.com/p/men-joggers/Steady-State-Classic-Fit-Jogger/_/prod11740065?color=19746">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="5.png" alt="Men's Restfeel Slide" class="product-image">
+                        <div class="description">
+                            Designed for comfort, these slides feature a soft, cushioned footbed and a stylish design, making them perfect for everyday wear.
+                        </div>
+                        <h3>
+                            <span class="product-name">Men's Restfeel Slide</span>
+                        </h3>
+                        <p>RM250</p>
+                        <a href="https://shop.lululemon.com/p/shoes/M-Restfeel-Slide/_/prod11020880?color=43646">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                    <div class="product-card">
+                        <img src="6.png" alt="Women's Fleece Restfeel Slide" class="product-image">
+                        <div class="description">
+                            Soft fleece slides designed for ultimate comfort, perfect for relaxing at home or casual outings.
+                        </div>
+                        <h3>
+                            <span class="product-name">Women's Fleece Restfeel Slide</span>
+                        </h3>
+                        <p>RM335</p>
+                        <a href="https://shop.lululemon.com/p/shoes/W-Fleece-Restfeel-Slide/_/prod11750518?color=69075">
+                            <button class="product-button">Add to Cart</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-horizontal">
+                <div class="testimonial-card">
+                    <p>"What can I say... I love the quality! Even after so many washes, my garments are still holding like new. I love the bellevue location."</p>
+                    <h3>- Anu B</h3>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Great experience! The associate was friendly and quickly helped me find socks. Checkout was fast, and I received my receipt via email. Shopping here is easy and fun."</p>
+                    <h3>- Marie S</h3>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Lululemon is the only place I shop at. The clothing is very comfortable and stylish. Jess is the reason I visit often—he gives great advice and is patient and attentive."</p>
+                    <h3>- Senay M.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="latest-news">
+        <div class="container">
+            <h2>Latest News</h2>
+            <div class="news-grid">
+                <article class="news-item">
+                    <h3>Press Releases</h3>
+                    <p>Check out the lastest news on lululemon</p>
+                    <a href="https://corporate.lululemon.com/media/press-releases" class="btn">Read More</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>CUSTOMER CARE</h3>
+                <p><strong>Phone Number:</strong> <br/> 1-877-263-9300</p>
+                <p><strong>Email Address:</strong><br/> customercare@lululemon.me</p>
+            </div>
+            <div class="footer-section">
+                <h3>POLICIES</h3>
+                <p><a href="https://shop.lululemon.com/help/legal/terms-of-use">Terms & Conditions</a></p>
+                <p><a href="https://shop.lululemon.com/help/return/policy">Return Policy</a></p>
+            </div>
+            <div class="footer-section">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/lululemon" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/lululemon/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/lululemon/" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.tiktok.com/@lululemon" aria-label="Tiktok"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.pinterest.com/lululemon/" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Lululemon. Eng Zhi Cheng. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
